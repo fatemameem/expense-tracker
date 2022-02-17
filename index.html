@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <header class="p-5">
+      <h1 class="p-5 text-4xl font-bold text-center text-sky-400/100">
+        Expense Tracker
+      </h1>
+    </header>
+    <main
+      class="block md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 mx-5 mb-5 px-5 pt-2 pb-5 gap-5"
+    >
+      <div class="image-section">
+        <!-- <h2>Hello</h2> -->
+        <img src="images/expense0.jpg" alt="" srcset="" />
+      </div>
+      <section class="calculation bg-white">
+        <div class="flex justify-center p-4">
+          <h2 class="text-2xl text-black font-semibold text-center">Income</h2>
+        </div>
+        <div class="income flex justify-between p-4 mx-4 my-2">
+          <h5 class="text-black font-medium px-5">Income:</h5>
+          <input
+            class="rounded-lg bg-slate-100 border-2 px-2 mx-2 w-full"
+            type="text"
+            name=""
+            placeholder="$ Your monthly income"
+            id="income-amount"
+          />
+        </div>
+        <div class="flex justify-center pb-4 px-4 pt-2">
+          <h2 class="text-2xl text-black font-semibold">Expenses</h2>
+        </div>
+        <div class="expense flex justify-between p-4 mx-5 my-2">
+          <h5 class="text-black font-medium px-5">Food:</h5>
+          <input
+            class="rounded-lg bg-slate-100 border-2 px-2 mx-2 w-full"
+            type="text"
+            name=""
+            placeholder="$ Monthly food cost"
+            id="food-expense"
+          />
+        </div>
+        <div class="expense flex justify-between p-4 mx-5 my-2">
+          <h5 class="text-black font-medium px-5">Rent:</h5>
+          <input
+            class="rounded-lg bg-slate-100 border-2 px-2 mx-2 w-full"
+            type="text"
+            name=""
+            placeholder="$ Monthly rent cost"
+            id="rent-expense"
+          />
+        </div>
+        <div class="expense flex justify-between py-4 pl-0 pr-4 mx-4 my-2">
+          <h5 class="text-black font-medium px-5">Clothes:</h5>
+          <input
+            class="rounded-lg bg-slate-100 border-2 px-2 mx-2 w-full"
+            type="text"
+            name=""
+            placeholder="$ Monthly clothes cost"
+            id="clothes-expense"
+          />
+        </div>
+        <div class="flex justify-center px-5 py-4">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded"
+            id="calculate-expenses"
+          >
+            Calculate
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <h2 class="text-2xl px-5 py-2 text-black font-semibold">
+            Total Expenses: $<span id="total-expenses ">0.00</span>
+          </h2>
+        </div>
+        <div class="flex justify-center">
+          <h2 class="text-2xl pt-2 pb-4 text-black font-semibold">
+            Balance: $<span id="balance">0.00</span>
+          </h2>
+        </div>
+        <div
+          class="savings flex justify-center flex-col sm:flex-row md:flex-row lg:flex-row align-middle"
+        >
+          <h5 class="text-center px-5 text-black font-medium py-2">Save:</h5>
+          <input
+            class="rounded-lg bg-slate-100 border-2 px-2 mx-2"
+            type="text"
+            name=""
+            placeholder="Savings"
+            id="saving-percentage"
+          />
+          <h5 class="px-5 py-2 text-black font-medium text-center">%</h5>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded"
+            id="calculate-savings"
+          >
+            Save
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <h2 class="text-2xl pt-2 pb-2 text-black font-semibold">
+            Saving Amount: $<span id="balance">0.00</span>
+          </h2>
+        </div>
+        <div class="flex justify-center">
+          <h2 class="text-2xl pt-0 pb-3 text-black font-semibold">
+            Remaining Balance: $<span id="balance">0.00</span>
+          </h2>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
