@@ -13,6 +13,16 @@ function validate(id) {
     return true;
   }
 }
+// Show alert functions and variables
+const alerts = document.getElementById("alertInput");
+const alertMessage = document.getElementById("alertBox");
+function showAlert(id) {
+  alerts.innerText = id;
+  alertMessage.style.display = "block";
+}
+function hideAlert() {
+  alertMessage.style.display = "none";
+}
 // initiating variables for calculation of the expenses and savings
 let balances = 0;
 let income = 0;
@@ -24,45 +34,34 @@ function calculateExpenses() {
   const incomeAmount = document.getElementById("income-amount");
   const totalExpenses = document.getElementById("expenses-total");
   const totalBalance = document.getElementById("balance");
-  const alertMessage = document.getElementById("alertBox");
   const calculationAlert = document.getElementById("alertMsg");
-  const alerts = document.getElementById("alertInput");
   income = parseFloat(incomeAmount.value);
+  incomeAmount.value = "";
   let expenses = 0;
   if (!validate(income)) {
-    alerts.innerText = "income";
-    alertMessage.style.display = "block";
-    incomeAmount.value = "";
+    showAlert("income");
     return;
   } else if (!validate(food)) {
-    alerts.innerText = "food";
-    alertMessage.style.display = "block";
-    incomeAmount.value = "";
+    showAlert("food");
     return;
   } else if (!validate(rent)) {
-    alerts.innerText = "rent";
-    alertMessage.style.display = "block";
-    incomeAmount.value = "";
+    showAlert("rent");
     return;
   } else if (!validate(clothes)) {
-    alerts.innerText = "clothes";
-    alertMessage.style.display = "block";
-    incomeAmount.value = "";
+    showAlert("clothes");
     return;
   } else {
     console.log(food, rent, clothes);
+    hideAlert();
     expenses = food + rent + clothes;
     balances = income - expenses;
   }
   if (expenses > income) {
     calculationAlert.style.display = "block";
-    incomeAmount.value = "";
     return;
   } else {
-    alertMessage.style.display = "none";
     totalExpenses.innerText = expenses.toFixed(2);
     totalBalance.innerText = balances.toFixed(2);
-    incomeAmount.value = "";
   }
 }
 // calculation of savings and showing an alert if it is not valid
@@ -82,6 +81,7 @@ function calculateSavings() {
       savingsPercentage.value = "";
       return;
     } else {
+      alertSavings.style.display = "none";
       savings.innerText = savingCalculation.toFixed(2);
       remainingBalance.innerText = (balances - savingCalculation).toFixed(2);
       savingsPercentage.value = "";
