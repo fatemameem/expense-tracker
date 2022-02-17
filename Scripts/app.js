@@ -60,6 +60,7 @@ function calculateExpenses() {
     calculationAlert.style.display = "block";
     return;
   } else {
+    calculationAlert.style.display = "none";
     totalExpenses.innerText = expenses.toFixed(2);
     totalBalance.innerText = balances.toFixed(2);
   }
