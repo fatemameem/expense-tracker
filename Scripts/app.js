@@ -57,7 +57,6 @@ function calculateExpenses() {
   if (expenses > income) {
     calculationAlert.style.display = "block";
     incomeAmount.value = "";
-    // alert("Expenses cannot be greater than income");
     return;
   } else {
     alertMessage.style.display = "none";
@@ -79,7 +78,6 @@ function calculateSavings() {
   } else {
     savingCalculation = income * (savingsAmount / 100);
     if (savingCalculation >= balances) {
-      // alert("Savings cannot be greater than balance");
       alertSavings.style.display = "block";
       savingsPercentage.value = "";
       return;
