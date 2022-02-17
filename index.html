@@ -8,6 +8,7 @@
     <title>Expense Tracker</title>
   </head>
   <body>
+    <!-- title of the page  -->
     <header class="p-5">
       <h1 class="p-5 text-4xl font-bold text-center text-sky-400/100">
         Expense Tracker
@@ -16,14 +17,16 @@
     <main
       class="block md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 mx-5 mb-5 px-5 pt-2 pb-5 gap-5"
     >
+      <!-- image part  -->
       <div class="image-section">
-        <!-- <h2>Hello</h2> -->
         <img src="images/expense0.jpg" alt="" srcset="" />
       </div>
+      <!-- main calculation and input part -->
       <section class="calculation bg-white">
         <div class="flex justify-center p-4">
           <h2 class="text-2xl text-black font-semibold text-center">Income</h2>
         </div>
+        <!-- income amount  -->
         <div class="income flex justify-between p-4 mx-4 my-2">
           <h5 class="text-black font-medium px-5">Income:</h5>
           <input
@@ -34,6 +37,7 @@
             id="income-amount"
           />
         </div>
+        <!-- expense part  -->
         <div class="flex justify-center pb-4 px-4 pt-2">
           <h2 class="text-2xl text-black font-semibold">Expenses</h2>
         </div>
@@ -75,6 +79,15 @@
             Calculate
           </button>
         </div>
+        <div
+          id="alertBox"
+          class="py-3 px-5 mb-4 text-red-500 text-sm"
+          role="alert"
+          style="display: none"
+        >
+          Please enter a valid number in the
+          <span id="alertInput"><strong>input</strong></span> field!
+        </div>
         <div class="flex justify-center">
           <h2 class="text-2xl px-5 py-2 text-black font-semibold">
             Total Expenses: $<span id="expenses-total">0.00</span>
@@ -85,6 +98,15 @@
             Balance: $<span id="balance">0.00</span>
           </h2>
         </div>
+        <div
+          id="alertMsg"
+          class="py-3 px-5 mb-4 text-red-500 text-sm"
+          role="alert"
+          style="display: none"
+        >
+          Expenses cannot be greater than income!
+        </div>
+        <!-- savings part  -->
         <div
           class="savings flex justify-center flex-col sm:flex-row md:flex-row lg:flex-row align-middle"
         >
@@ -104,6 +126,7 @@
             Save
           </button>
         </div>
+
         <div class="flex justify-center">
           <h2 class="text-2xl pt-2 pb-2 text-black font-semibold">
             Saving Amount: $<span id="saving-balance">0.00</span>
@@ -113,6 +136,14 @@
           <h2 class="text-2xl pt-0 pb-3 text-black font-semibold">
             Remaining Balance: $<span id="remaining-balance">0.00</span>
           </h2>
+        </div>
+        <div
+          id="alertSavings"
+          class="py-3 px-5 mb-4 text-red-500 text-sm"
+          role="alert"
+          style="display: none"
+        >
+          Savings cannot be greater than current balance!
         </div>
       </section>
     </main>
